@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+:root {
+  --font-family: "Montserrat", sans-serif;
+}
+
+/* ...lanjutkan dengan CSS lain di bawah ini... */
+:root {
+  /* --font-family: "Inter", sans-serif; */
+  --font-family: "Montserrat", sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+}
+.grid-rows-cards {
+  grid-auto-rows: minmax(0, 215px);
+}
+.tag {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-height: 30px;
+  border-radius: 0 15px;
+}
+.card.card-featured:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: scale(1.1);
+  transition: 0.5s transform ease-in-out;
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.51));
+}
+.card.card-featured .img-wrapper {
+  z-index: 1;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: scale(1.1);
+  transition: 0.25s transform ease-in-out;
+}
+.card.card-featured .meta-wrapper {
+  z-index: 4;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(0);
+  transition: 0.3s transform ease-in-out;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+.card.card-featured:hover .meta-wrapper {
+  transform: translateY(-10px);
+}
+.card.card-featured:hover:after {
+  transform: scale(1);
+}
+.card.card-featured:hover .img-wrapper {
+  transform: scale(1);
+}

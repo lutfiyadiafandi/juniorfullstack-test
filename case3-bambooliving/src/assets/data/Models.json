@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "ZEN 100",
+    "image": "/assets/images/Zen-100.webp",
+    "price": "$14,850"
+  },
+  {
+    "id": 2,
+    "name": "NALU",
+    "image": "/assets/images/Nalu.webp",
+    "price": "$16,480"
+  },
+  {
+    "id": 3,
+    "name": "KONA 192",
+    "image": "/assets/images/Kona-192.webp",
+    "price": "$29,950"
+  },
+  {
+    "id": 4,
+    "name": "HALEIKI",
+    "image": "/assets/images/Haleiki.webp",
+    "price": "$20,450"
+  },
+  {
+    "id": 5,
+    "name": "OHANA 16",
+    "image": "/assets/images/Ohana-16.webp",
+    "price": "$42,500"
+  },
+  {
+    "id": 6,
+    "name": "ZEN 400",
+    "image": "/assets/images/Zen-400.webp",
+    "price": "$45,550"
+  },
+  {
+    "id": 7,
+    "name": "BONSAI",
+    "image": "/assets/images/Bonsai.webp",
+    "price": "$38,050"
+  },
+  {
+    "id": 8,
+    "name": "PUNA 352",
+    "image": "/assets/images/Puna-352.webp",
+    "price": "$46,200"
+  }
+]
