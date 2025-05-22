@@ -73,7 +73,17 @@ const findFruitType = (data: IFruit[]): string[] => {
   return fruitTypes;
 };
 console.log("Jumlah wadah yang dibutuhkan:", findFruitType(fruits).length);
-console.log("Buah apa saja di masing-masing wadah:", findFruitType(fruits));
+const fruitsByType = fruits.reduce((acc: Record<string, string[]>, fruit) => {
+  const type = fruit.fruitType;
+  const name = fruit.fruitName.toLowerCase();
+  if (!acc[type]) acc[type] = [];
+  if (!acc[type].includes(name)) acc[type].push(name);
+  return acc;
+}, {});
+
+Object.entries(fruitsByType).forEach(([type, names]) => {
+  console.log(`Wadah ${type}:`, names);
+});
 
 // 3. Berapa total stock buah yang ada di masing-masing wadah?
 const findTotalStock = (data: IFruit[]): number[] => {
@@ -87,10 +97,11 @@ const findTotalStock = (data: IFruit[]): number[] => {
       arr.indexOf(stock) === index
   );
 };
-console.log(
-  "Total stock buah yang ada di masing-masing wadah:",
-  findTotalStock(fruits)
-);
+const total = findTotalStock(fruits);
+console.log("Total stock buah yang ada di masing-masing wadah:", {
+  IMPORT: total[0],
+  LOCAL: total[1],
+});
 
 // 4. Apakah ada komentar terkait kasus diatas?
-// Belum ada untuk saat ini
+// Di data Fruits, seharusnya untuk id bersifat unik dan tidak boleh ada duplikasi id.
