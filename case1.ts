@@ -60,7 +60,15 @@ const findFruitAndi = (data: IFruit[]): string[] => {
     );
   return fruitNames;
 };
-console.log("Buah yang dimiliki Andi:", findFruitAndi(fruits));
+const fruitAndi = findFruitAndi(fruits);
+const toUpperCase = (str: string) => {
+  return str
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+};
+
+console.log("Buah yang dimiliki Andi:", toUpperCase(fruitAndi.join(", ")));
 
 // 2. Andi memisahkan buahnya menjadi beberapa wadah berdasarkan tipe buah (fruitType). Berapa jumlah wadah yang dibutuhkan? Dan ada buah apa saja di masing-masing wadah?
 const findFruitType = (data: IFruit[]): string[] => {
